@@ -1,0 +1,79 @@
+﻿<Window x:Class="ManagementSystem.PayManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PayManage" Height="359" Width="431">
+    <DockPanel LastChildFill="True">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <GroupBox Header="支付信息表" Grid.Row="0" Margin="8">
+                <ListView Margin="5" Name="LV_Pay" SelectionChanged="PaySelectionChanged">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="顾客名" Width="70">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Cname}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="订单号" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Ono}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="支付金额" Width="70">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center"  Text="{Binding Pmoney, TargetNullValue=未支付}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="支付日期" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center"  Text="{Binding Pdate,TargetNullValue=未支付}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+            
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5">
+                    <TextBlock>顾客名：</TextBlock>
+                    <TextBox IsReadOnly="True" Width="80" Name="tb_Cname"></TextBox>
+                    <TextBlock Margin="10,0,0,0">订单号：</TextBlock>
+                    <TextBox IsReadOnly="True" Width="100" Name="tb_Ono"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5">
+                    <TextBlock>支付日期：</TextBlock>
+                    <DatePicker Name="dp_Pdate"></DatePicker>
+                    <TextBlock Margin="10,0,0,0">支付金额：</TextBlock>
+                    <TextBox Width="50" Name="tb_Pmoney"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="5">
+                    <Button Click="UpdatePayInfo_Click">更新支付信息</Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        
+    </DockPanel>
+</Window>

@@ -1,0 +1,66 @@
+﻿<Window x:Class="ManagementSystem.StorageManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="商品库存" Height="300" Width="493">
+    <DockPanel LastChildFill="True">
+        <ToolBar DockPanel.Dock="Top">
+            
+            <Separator />
+            <TextBlock VerticalAlignment="Center">查询条件：</TextBlock>
+            <DatePicker Name="dpDate" ></DatePicker>
+            <Border CornerRadius="5" Margin="3,0,0,0">
+                <Button Click="Search_Click">开始查询</Button>
+            </Border>           
+        </ToolBar>
+        <Grid>
+            <GroupBox Header="库存信息列表" Margin="8">
+                <ListView Name="LV_Storage">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>                            
+                            <GridViewColumn Header="商品名称" Width="70">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Gname}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="上月节余数量" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding LmGstore}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="进仓数量" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding PGnum}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="销售数量" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding SGnum}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="本月节余数量" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Gstore}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>

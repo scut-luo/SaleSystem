@@ -1,0 +1,10 @@
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\bin\Debug\DatabaseControlLib.dll
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\bin\Debug\DatabaseControlLib.pdb
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\obj\Debug\DatabaseControlLib.dll
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\obj\Debug\DatabaseControlLib.pdb
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\obj\Debug\DatabaseControlLib.csprojResolveAssemblyReference.cache
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\bin\Debug\DatabaseControlLib.dll
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\bin\Debug\DatabaseControlLib.pdb
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\obj\Debug\DatabaseControlLib.dll
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\obj\Debug\DatabaseControlLib.pdb
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\obj\Debug\DatabaseControlLib.csprojResolveAssemblyReference.cache

@@ -1,0 +1,48 @@
+﻿<Window x:Class="ManagementSystem.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localspace="clr-namespace:ManagementSystem"
+        Title="Main" Height="420" Width="581">
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="基本档案[_B]">
+                    <MenuItem Header="供应商信息" Click="MenuSupplierInfo_Click" />
+                    <MenuItem Header="顾客信息" Click="MenuCustomerInfo_Click" />
+                </MenuItem>
+                <MenuItem Header="进货管理[_C]">
+                    <MenuItem Header="进货信息管理" Click="MenuPurchaseGoods_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="销售管理[_S]">
+                    <MenuItem Header="订单管理" Click="MenuOrder_Click"></MenuItem>
+                    <MenuItem Header="支付管理" Click="MenuPay_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="商品管理[_D]">
+                    <MenuItem Header="商品信息管理" Click="MenuGoodsManage_Click"></MenuItem>
+                    <MenuItem Header="商品库存" Click="MenuStorageManage_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="系统管理[_K]" Click="MenuSysUserManage_Click">
+                    <MenuItem Header="系统用户管理"></MenuItem>
+                </MenuItem>
+            </Menu>
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem Width="250"></StatusBarItem>
+                <StatusBarItem>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>操作员为：</TextBlock>
+                        <TextBlock Text="{x:Static localspace:LoginInfo.LoginName}" />
+                    </StackPanel>                    
+                </StatusBarItem>
+                <StatusBarItem>
+                    <StackPanel Orientation="Horizontal" Margin="10,0">
+                        <TextBlock>当前时间为：</TextBlock>
+                        <TextBlock Name="Time"></TextBlock>
+                    </StackPanel>                    
+                </StatusBarItem>
+            </StatusBar>
+            <Border></Border>
+        </DockPanel>
+    </Grid>
+</Window>

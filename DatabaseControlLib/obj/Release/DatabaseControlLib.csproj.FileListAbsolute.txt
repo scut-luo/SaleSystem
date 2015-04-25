@@ -1,0 +1,8 @@
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\bin\Release\DatabaseControlLib.dll
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\bin\Release\DatabaseControlLib.pdb
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\obj\Release\DatabaseControlLib.dll
+D:\大学\大三\C#课程设计\StudentSystem\DatabaseControlLib\obj\Release\DatabaseControlLib.pdb
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\bin\Release\DatabaseControlLib.dll
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\bin\Release\DatabaseControlLib.pdb
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\obj\Release\DatabaseControlLib.dll
+D:\大学\大三\数据库课程设计\SaleSystem\DatabaseControlLib\obj\Release\DatabaseControlLib.pdb

@@ -1,0 +1,110 @@
+﻿<Window x:Class="ManagementSystem.PurchaseGoodsManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="进货信息管理" Height="434" Width="763">
+    <DockPanel LastChildFill="True">
+        <ToolBar DockPanel.Dock="Top" Height="32">
+            <Button Margin="3,1" Click="AddNewPurchase">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/ManagementSystem;component/Resources/Images/添加.ico"/>
+                    <TextBlock VerticalAlignment="Center" Margin="2,0">添加</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Margin="3,1" Click="EditPurchase_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/ManagementSystem;component/Resources/Images/修改.ico" />
+                    <TextBlock VerticalAlignment="Center" Margin="2,0">修改</TextBlock>
+                </StackPanel>
+            </Button>            
+        </ToolBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="进货批次" Margin="5" Grid.Column="0">
+                <ListView Name="LV_PurchaseAndSupplier" SelectionChanged="PurchaseSelectionChanged">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="进货单号" Width="60">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Pno}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="供应商编号" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Sno}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="供应商名称" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Sname}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="进货日期" Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Pdate}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+            
+            <GroupBox Header="进货明细" Margin="5" Grid.Column="1">
+                <ListView Name="LV_PurchaseDetail">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="商品编号" Width="60">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Gno}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="商品名称" Width="120">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding Gname}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="进货数量" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding PDnum}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="进货单价" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Width="Auto" TextAlignment="Center" Text="{Binding PDprice}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
+</Window>
